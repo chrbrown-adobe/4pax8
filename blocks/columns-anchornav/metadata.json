@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-anchornav",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-07-15T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.pax8.com/en-us/marketplace/cybersecurity/",
+    "originPage": "Pax8 cybersecurity marketplace landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "in-page-nav",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "row of icon + jump-link cells",
+    "buttonCount": 6,
+    "imageCount": 0,
+    "iconType": "font-awesome (far fa-angle-double-down)"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "in-page anchor navigation strips",
+      "horizontal jump-link menus with leading icons"
+    ],
+    "notSuitableFor": [
+      "content columns with paragraphs/images",
+      "CTA banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/marketplace/cybersecurity/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-15T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,102 @@
+/* Block: accordion-faq -- styles extracted from source computed styles
+ * Source: pax8.com Elementor accordion widget.
+ * Decorated DOM:
+ *   .accordion-faq
+ *     details.accordion-faq-item
+ *       summary.accordion-faq-item-label   (question)
+ *       div.accordion-faq-item-body         (answer)
+ */
+
+.accordion-faq {
+  max-width: 960px;
+}
+
+/* Items stack flush -- source has no borders, no dividers, no gap */
+.accordion-faq .accordion-faq-item {
+  border: none;
+  background-color: transparent;
+}
+
+.accordion-faq .accordion-faq-item + .accordion-faq-item {
+  margin-top: 0;
+}
+
+/* Question header: icon on the LEFT, plus/minus toggle */
+.accordion-faq .accordion-faq-item-label {
+  position: relative;
+  padding: 15px 20px 15px 44px;
+  color: rgb(0 0 0);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  cursor: pointer;
+  list-style: none;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.accordion-faq .accordion-faq-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* Left-side toggle icon: "+" when closed */
+.accordion-faq .accordion-faq-item-label::before {
+  content: "+";
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  width: 24px;
+  color: rgb(0 0 0);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+}
+
+/* "-" when open */
+.accordion-faq .accordion-faq-item[open] .accordion-faq-item-label::before {
+  content: "\2013"; /* en dash matches source minus glyph weight */
+}
+
+/* Answer body: indented past the icon, matches source .elementor-tab-content */
+.accordion-faq .accordion-faq-item-body {
+  padding: 10px 40px;
+  color: rgb(0 0 0);
+  font-size: 16px;
+  line-height: 20px;
+  background-color: transparent;
+  border-top: none;
+}
+
+.accordion-faq .accordion-faq-item-body p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgb(0 0 0);
+}
+
+.accordion-faq .accordion-faq-item-body ul,
+.accordion-faq .accordion-faq-item-body ol {
+  margin: 0 0 24px 20px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.accordion-faq .accordion-faq-item-body ul {
+  list-style-type: disc;
+}
+
+.accordion-faq .accordion-faq-item-body li {
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(0 0 0);
+}
+
+.accordion-faq .accordion-faq-item-body a:any-link {
+  color: var(--link-color);
+  font-weight: 400;
+  text-decoration: none;
+}

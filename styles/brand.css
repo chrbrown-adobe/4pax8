@@ -1,0 +1,24 @@
+:root {
+  --heading-font-family: "Poppins", sans-serif;
+  --body-font-family: "Poppins", sans-serif;
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: rgb(25 110 249);
+  --link-hover-color: rgb(25 25 112);
+  --section-dark-color: #000;
+  --section-accent-color: rgb(4 71 191);
+  --content-max-width: 1240px;
+  --nav-height: 64px;
+  --heading-size-xxl: 68px;
+  --heading-size-xl: 48px;
+  --heading-size-l: 36px;
+  --heading-size-m: 30px;
+  --heading-size-s: 26px;
+  --heading-size-xs: 20px;
+  --heading-size-xxl-mobile: 36px;
+  --heading-size-xl-mobile: 28px;
+  --heading-size-l-mobile: 24px;
+  --heading-size-m-mobile: 20px;
+  --heading-size-s-mobile: 18px;
+  --heading-size-xs-mobile: 16px;
+}

@@ -1,0 +1,97 @@
+/* Block: cards-vendor -- 4-up vendor cards on a dark section.
+   Values extracted from source computed styles (pax8 cybersecurity). */
+
+.cards-vendor > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Card: white box on the dark section */
+.cards-vendor > ul > li {
+  background-color: var(--background-color);
+  border: 1px solid rgb(112 112 112);
+  border-radius: 10px;
+  overflow: hidden; /* clip logo image to rounded top corners */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo image spans the card top, contained (logos, not photos) */
+.cards-vendor .cards-vendor-card-image {
+  line-height: 0;
+  text-align: center;
+}
+
+.cards-vendor .cards-vendor-card-image img {
+  width: 100%;
+  aspect-ratio: 278 / 135;
+  object-fit: contain;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Text section */
+.cards-vendor .cards-vendor-card-body {
+  padding: 40px 30px;
+
+  /* force card typography colors -- override .section.dark white text/links */
+  color: var(--text-color);
+}
+
+.cards-vendor .cards-vendor-card-body h5 {
+  margin: 0 0 20px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-s); /* 26px desktop */
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.cards-vendor .cards-vendor-card-body p {
+  margin: 0 0 10px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s); /* 16px */
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-color);
+}
+
+/* CTA link: plain text link, brand blue -- reset EDS dark-section white + button decoration */
+.cards-vendor .cards-vendor-card-body a:any-link,
+main .section.dark .cards-vendor .cards-vendor-card-body a:any-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+main .section.dark .cards-vendor .cards-vendor-card-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* EDS may wrap standalone <p><a> in a .button-container -- keep it inline */
+.cards-vendor .cards-vendor-card-body .button-container {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .cards-vendor > ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .cards-vendor .cards-vendor-card-body {
+    padding: 60px 30px;
+  }
+}

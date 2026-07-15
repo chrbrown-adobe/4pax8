@@ -1,0 +1,99 @@
+/* hero-cyber -- dark full-bleed circuit-board hero */
+
+/* Design extracted from https://www.pax8.com/en-us/marketplace/cybersecurity/ (.elementor-element-1d242be) */
+
+/* Full-bleed: cancel the section max-width/padding wrapper */
+.hero-cyber-container .hero-cyber-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-cyber-container {
+  margin: 0;
+}
+
+.hero-cyber {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 24px;
+  background-color: #04275e; /* deep blue fallback beneath the circuit-board image */
+  background-image: url("https://www.pax8.com/en-us/wp-content/uploads/sites/4/2025/10/touchid-lock-on-circuit-board-on-blue-background.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+/* Content row/cell: constrain to the boxed container, left-aligned */
+.hero-cyber > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-cyber > div > div {
+  max-width: 620px; /* content occupies the left column (~50% of 1200) */
+  text-align: left;
+}
+
+/* Headline */
+.hero-cyber h1 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  font-size: var(--heading-font-size-xxl); /* 36px mobile / 68px desktop */
+  line-height: 1.2;
+}
+
+/* Subheading */
+.hero-cyber h5 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  font-size: var(--heading-font-size-s); /* 18px mobile / 26px desktop */
+  line-height: 1.2;
+}
+
+/* CTA: white pill button with black text (overrides global brand button) */
+.hero-cyber .button-container {
+  margin: 20px 0 0;
+}
+
+.hero-cyber a.button:any-link {
+  margin: 0;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #000;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.hero-cyber a.button:any-link:hover,
+.hero-cyber a.button:any-link:focus {
+  background-color: rgb(0 0 0 / 0%);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Fallback when no background image is authored */
+.hero-cyber.no-image {
+  background-image: none;
+}
+
+@media (width >= 900px) {
+  .hero-cyber {
+    padding: 200px 32px; /* tall hero, matches source 200px vertical padding */
+  }
+
+  .hero-cyber h1 {
+    line-height: 1.2; /* 68px * 1.2 = 81.6px */
+  }
+}

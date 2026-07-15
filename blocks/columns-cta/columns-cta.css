@@ -1,0 +1,116 @@
+/* columns-cta -- full-width CTA banner (values from source computed styles) */
+
+/* Full-width: neutralize the section's 1200px content wrapper so the CTA
+   spans its colored section; inner content is re-constrained below. */
+.columns-cta-wrapper {
+  max-width: 100% !important;
+}
+
+/* Block container: centered content column, inner max-width matches source */
+.columns-cta {
+  text-align: center;
+}
+
+.columns-cta > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cell wrapper -- reset the base columns-cta flex layout for a single
+   centered content column (instances have one content cell) */
+.columns-cta > div > div {
+  flex: unset;
+  order: unset;
+  width: 100%;
+}
+
+/* Typography -- Microsoft CTA (instance 3) heading + supporting text */
+.columns-cta h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.columns-cta h6 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+/* Body / plain-text CTA (instances 1 & 2) */
+.columns-cta p,
+.columns-cta > div > div {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 1.25;
+}
+
+/* Outlined pill button (EDS decorates <p><a> into a.button) */
+.columns-cta a.button:any-link {
+  margin: 0;
+  padding: 10px 20px;
+  border: 1px solid var(--text-color);
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.columns-cta a.button:hover,
+.columns-cta a.button:focus {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Reduce spacing around the button container so it hugs the pill */
+.columns-cta .button-container {
+  margin: 0;
+}
+
+/* Dark-section instance (vendor CTA): white text + white outlined pill.
+   The section.dark rule in styles.css sets the background + white type;
+   ensure the pill border/link follow suit. */
+.section.dark .columns-cta a.button:any-link {
+  border-color: #fff;
+  color: #fff;
+}
+
+.section.dark .columns-cta a.button:hover,
+.section.dark .columns-cta a.button:focus {
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+/* Desktop typography (source desktop sizes) */
+@media (width >= 900px) {
+  .columns-cta h2 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+
+  .columns-cta h6 {
+    font-size: var(--body-font-size-m);
+  }
+
+  .columns-cta p,
+  .columns-cta > div > div {
+    font-size: var(--body-font-size-s);
+  }
+}

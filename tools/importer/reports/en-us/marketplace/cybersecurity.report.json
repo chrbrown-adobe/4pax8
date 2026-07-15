@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "url": "https://www.pax8.com/en-us/marketplace/cybersecurity/",
+  "path": "en-us/marketplace/cybersecurity",
+  "timestamp": "2026-07-15T19:11:59.021Z",
+  "title": "Cybersecurity | Pax8",
+  "template": "cybersecurity-marketplace",
+  "blocks": [
+    "columns-announce",
+    "hero-cyber",
+    "columns-anchornav",
+    "cards-icon",
+    "cards-icon",
+    "columns-cta",
+    "columns-cta",
+    "columns-cta",
+    "cards-resource",
+    "cards-resource",
+    "columns-feature",
+    "columns-feature",
+    "quote-testimonial",
+    "quote-testimonial",
+    "cards-vendor",
+    "accordion-faq",
+    "form-contact"
+  ]
+}

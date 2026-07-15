@@ -1,0 +1,90 @@
+/* Block: quote-testimonial
+ * Values extracted from source computed styles:
+ *   quote h5      -> 26px / 400 / line-height 30px / margin 0 0 20px
+ *   attribution p -> 16px / 400 / line-height 20px / margin 0 0 10px
+ *   button        -> transparent bg, 1px solid currentColor, radius 30px,
+ *                    padding 10px 20px, 14px / 500
+ *   Instance 1 (light section): centered, black text, decorative quote marks.
+ *   Instance 2 (dark section):  left-aligned, white text.
+ */
+
+.quote-testimonial {
+  padding: 70px 24px;
+}
+
+.quote-testimonial .quote-testimonial-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* the quotation */
+.quote-testimonial .quote-testimonial-quotation {
+  margin: 0 0 20px;
+  font-family: var(--heading-font-family);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/* decorative opening quotation mark (source uses flanking mark images) */
+.quote-testimonial .quote-testimonial-quotation::before {
+  content: "\201C";
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 0.4;
+}
+
+/* attribution: name / title / company */
+.quote-testimonial .quote-testimonial-attribution {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* "Read the case study" link rendered as an outlined pill button by EDS */
+.quote-testimonial a.button:any-link {
+  margin-top: 10px;
+  border: 1px solid currentcolor;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: transparent;
+  color: inherit;
+}
+
+.quote-testimonial a.button:hover,
+.quote-testimonial a.button:focus {
+  background-color: currentcolor;
+  color: var(--background-color);
+}
+
+/* Instance 2 context: dark section -> white text, left aligned alongside form */
+.section.dark .quote-testimonial .quote-testimonial-content {
+  text-align: left;
+}
+
+.section.dark .quote-testimonial .quote-testimonial-quotation,
+.section.dark .quote-testimonial .quote-testimonial-attribution {
+  color: #fff;
+}
+
+.section.dark .quote-testimonial a.button:any-link {
+  border-color: #fff;
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .quote-testimonial {
+    padding: 70px 100px;
+  }
+
+  .quote-testimonial .quote-testimonial-quotation::before {
+    font-size: 90px;
+  }
+}

@@ -16,5 +16,11 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // label the sections so CSS can target them
+  const sections = footer.children;
+  if (sections[0]) sections[0].classList.add('footer-cta-row');
+  if (sections[1]) sections[1].classList.add('footer-main');
+  if (sections[2]) sections[2].classList.add('footer-bottom');
+
   block.append(footer);
 }

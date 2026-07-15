@@ -1,0 +1,127 @@
+/* cards-resource -- styles extracted from
+   https://www.pax8.com/en-us/marketplace/cybersecurity/
+   (.elementor-element-c21ae72 2-up + .elementor-element-b9aeb8c 3-up "chateau") */
+
+/* ---- Grid ------------------------------------------------------------ */
+.cards-resource > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* source card margins produce ~20px inter-card gutter */
+}
+
+@media (width >= 900px) {
+  .cards-resource > ul {
+    /* 2-up hero cards / 3-up icon cards both lay out via auto-fit */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+}
+
+/* ---- Card ------------------------------------------------------------ */
+.cards-resource > ul > li {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* clip full-bleed image to the 10px radius */
+  border: 1px solid rgb(112 112 112);
+  border-radius: 10px;
+  background-color: var(--background-color); /* rgb(255,255,255) */
+  color: var(--text-color); /* rgb(0,0,0) */
+}
+
+/* ---- Full-bleed hero image (top) ------------------------------------- */
+.cards-resource .cards-resource-card-image {
+  line-height: 0;
+}
+
+.cards-resource .cards-resource-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 730 / 450; /* source natural 730x450 */
+  object-fit: cover;
+}
+
+/* ---- Card body ------------------------------------------------------- */
+.cards-resource .cards-resource-card-body {
+  padding: 40px 30px; /* source text section 60px 30px; reduced top for mobile */
+}
+
+@media (width >= 900px) {
+  .cards-resource .cards-resource-card-body {
+    padding: 60px 30px;
+  }
+}
+
+.cards-resource .cards-resource-card-body h5 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.2px;
+  color: var(--text-color);
+}
+
+.cards-resource .cards-resource-card-body p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--text-color);
+}
+
+/* CTA is a plain blue text link on the source, not an EDS button */
+.cards-resource .cards-resource-card-body a,
+.cards-resource .cards-resource-card-body a.button:any-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color); /* rgb(25,110,249) */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-decoration: none;
+}
+
+.cards-resource .cards-resource-card-body a:hover,
+.cards-resource .cards-resource-card-body a.button:hover {
+  background-color: transparent;
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* EDS wraps standalone <p><a> in a .button-container; keep it inline flow */
+.cards-resource .cards-resource-card-body .button-container {
+  margin: 0;
+}
+
+/* ---- icons variant (white-label/chateau cards) ---------------------- */
+
+/* Small left-aligned icon, no card chrome — matches source
+   .elementor-element-b9aeb8c: transparent bg, no border, ~100px icon. */
+.cards-resource.icons > ul > li {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  overflow: visible;
+}
+
+.cards-resource.icons .cards-resource-card-image img {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.cards-resource.icons .cards-resource-card-body {
+  padding: 0;
+}
+
+@media (width >= 900px) {
+  .cards-resource.icons .cards-resource-card-body {
+    padding: 0;
+  }
+}

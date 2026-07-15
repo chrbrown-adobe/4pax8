@@ -61,6 +61,11 @@ function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
+  // when all panels collapse on desktop, the transparent header returns to its default state
+  if (expanded === false || expanded === 'false') {
+    const header = sections.closest('header');
+    if (header) header.classList.remove('is-open');
+  }
 }
 
 /**
@@ -202,11 +207,15 @@ export default async function decorate(block) {
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      // a megamenu is a dropdown whose sub-items themselves contain nested lists (regions)
+      if (navSection.querySelector(':scope > ul > li > ul')) navSection.classList.add('nav-megamenu');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          // transparent header turns solid while a panel is open
+          nav.closest('header').classList.toggle('is-open', !expanded);
         }
       });
     });

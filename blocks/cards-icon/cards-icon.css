@@ -1,0 +1,121 @@
+/* cards-icon -- 3-up colored icon tiles */
+
+/* Values extracted from source computed styles:
+   https://www.pax8.com/en-us/marketplace/cybersecurity/
+   .elementor-element-7d58b72 (value props): blue/black/green tiles
+   .elementor-element-82348e6 (enablement): black tiles + CTA links
+   Common per-card chrome: padding 50px, border-radius 10px, gap 20px */
+
+.cards-icon > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (width >= 900px) {
+  .cards-icon > ul {
+    /* source: 3 equal tiles, gap 20px */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* card tile */
+.cards-icon > ul > li {
+  display: flex;
+  flex-direction: column;
+
+  /* source card: black tile, 50px padding, 10px radius */
+  padding: 50px;
+  border: 0;
+  border-radius: 10px;
+  background-color: rgb(0 0 0);
+  color: rgb(255 255 255);
+}
+
+/* value-props variant cycles blue / black / green across the three tiles.
+   Applied only when exactly 3 tiles are present so the enablement set
+   (also 3 black tiles) stays consistent for the black tile, and the
+   colored accents reproduce the source value-props row. */
+.cards-icon > ul > li:first-child:nth-last-child(3) {
+  background-color: rgb(4 71 191);
+}
+
+.cards-icon > ul > li:first-child:nth-last-child(3) ~ li:last-child {
+  /* green tile uses dark text on source */
+  background-color: rgb(3 222 145);
+  color: rgb(0 0 0);
+}
+
+/* icon cell: PNG image kept as-is, left-aligned, source-rendered ~100px */
+.cards-icon .cards-icon-card-image {
+  line-height: 0;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.cards-icon > ul > li img,
+.cards-icon .cards-icon-card-image img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  aspect-ratio: unset;
+}
+
+/* text cell */
+.cards-icon .cards-icon-card-body {
+  text-align: start;
+  color: inherit;
+}
+
+.cards-icon .cards-icon-card-body h1,
+.cards-icon .cards-icon-card-body h2,
+.cards-icon .cards-icon-card-body h3,
+.cards-icon .cards-icon-card-body h4,
+.cards-icon .cards-icon-card-body h5,
+.cards-icon .cards-icon-card-body h6 {
+  margin: 0;
+
+  /* source h4: 30px / 500 / 36px */
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  color: inherit;
+}
+
+.cards-icon .cards-icon-card-body p {
+  /* source paragraph: 16px / 400 / 20px */
+  margin: 16px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: inherit;
+}
+
+/* CTA is a plain underlined text link on source (not an EDS button).
+   Inherit tile text color so links read white on dark, black on green. */
+.cards-icon .cards-icon-card-body a:any-link,
+.cards-icon .cards-icon-card-body a.button:any-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: inherit;
+  white-space: normal;
+}
+
+.cards-icon .cards-icon-card-body .button-container {
+  display: block;
+  margin: 10px 0 0;
+}

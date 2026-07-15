@@ -1,0 +1,90 @@
+/* columns-anchornav -- in-page anchor navigation strip */
+
+/* Values extracted from source computed styles (.elementor-element-002b496) */
+
+/* Full-width blue strip. EDS wraps the block in .section > div (max-width 1200px),
+   so break the wrapper out to full width and paint the background on the block. */
+.columns-anchornav-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.columns-anchornav {
+  background-color: rgb(4 71 191);
+  margin: 0;
+  padding: 20px 16px;
+}
+
+/* Row of pill links: centered, wrapping. .plain.html = .columns-anchornav > div > div > a */
+.columns-anchornav > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Each cell simply holds one link; let the link size itself */
+.columns-anchornav > div > div {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Outlined white pill button */
+.columns-anchornav a,
+.columns-anchornav a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  margin: 0;
+  border: 1px solid rgb(255 255 255);
+  border-radius: 30px;
+  background-color: transparent;
+  color: rgb(255 255 255);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Leading (rendered trailing) double-down chevron.
+   Source uses FontAwesome "far fa-angle-double-down" (U+F103) placed to the RIGHT
+   of the text via row-reverse. The FontAwesome font/PNG is unavailable in EDS, so
+   we render the glyph as an inline-SVG mask -- color is driven by background-color,
+   which lets it flip white -> black on hover to match the source exactly. */
+.columns-anchornav a::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  flex: 0 0 auto;
+  background-color: currentcolor;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 182.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 96l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z"/></svg>');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* Hover / focus: white fill, black text + chevron (source: .blue-btn a:hover) */
+.columns-anchornav a:hover,
+.columns-anchornav a:focus {
+  background-color: rgb(255 255 255);
+  color: rgb(0 0 0);
+  border-color: rgb(255 255 255);
+  text-decoration: none;
+}
+
+/* If EDS renders an icon token span inside the link, hide it -- the ::after
+   pseudo-element supplies the chevron and avoids a doubled/empty glyph. */
+.columns-anchornav a .icon {
+  display: none;
+}

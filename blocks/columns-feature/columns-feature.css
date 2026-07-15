@@ -1,0 +1,137 @@
+/* columns-feature -- 2-column side-by-side feature layout */
+
+/* Values extracted from source computed styles (pax8 cybersecurity). */
+
+/* Variant A: image col + text col on WHITE bg (image FIRST)  -- "security coach". */
+
+/* Variant B: text col + image col on BLACK bg (image LAST)   -- "events". */
+
+/* ---- Block wrapper / section padding ---- */
+main .columns-feature.block {
+  padding: 40px 20px;
+}
+
+/* ---- Row (mobile-first: stacked) ---- */
+.columns-feature > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* image column stacks first on mobile in both variants */
+.columns-feature > div > .columns-feature-img-col {
+  order: 0;
+}
+
+.columns-feature > div > div {
+  order: 1;
+}
+
+/* ---- Images ---- */
+.columns-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ---- Typography ---- */
+.columns-feature h2 {
+  margin: 0 0 20px;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl); /* 48px desktop / 28px mobile */
+  font-weight: 600;
+  line-height: 1.2; /* instance1 source: 57.6/48 */
+}
+
+.columns-feature p {
+  margin: 0 0 10px;
+  font-size: var(--body-font-size-s); /* 16px */
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.columns-feature em {
+  font-style: italic;
+}
+
+/* ---- CTA (outlined pill button) ---- */
+
+/* Override EDS default filled a.button; source CTA is transparent outlined pill. */
+main .columns-feature a.button:any-link {
+  display: inline-block;
+  margin: 12px 0 0;
+  padding: 10px 20px;
+  border: 1px solid currentcolor;
+  border-radius: 30px;
+  background-color: transparent;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+main .columns-feature a.button:hover,
+main .columns-feature a.button:focus {
+  background-color: currentcolor;
+  color: var(--background-color);
+}
+
+/* keep button-container inline so CTA hugs content */
+.columns-feature .button-container {
+  margin: 0;
+}
+
+/* ---- Variant B: image is the LAST cell -> BLACK background ---- */
+main .columns-feature.block:has(> div > .columns-feature-img-col:last-child) {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+main .columns-feature.block:has(> div > .columns-feature-img-col:last-child) h2 {
+  color: #fff;
+  line-height: 1.04; /* events source: 50/48 */
+}
+
+main .columns-feature.block:has(> div > .columns-feature-img-col:last-child) a.button:hover,
+main .columns-feature.block:has(> div > .columns-feature-img-col:last-child) a.button:focus {
+  background-color: #fff;
+  color: var(--dark-color);
+}
+
+/* ---- Desktop layout (>= 900px): true 2-column side-by-side ---- */
+@media (width >= 900px) {
+  main .columns-feature.block {
+    padding: 100px 20px;
+  }
+
+  .columns-feature > div {
+    flex-direction: row;
+    align-items: center; /* vertical center text against image */
+    gap: 40px;
+  }
+
+  .columns-feature > div > div {
+    order: unset;
+  }
+
+  /* Variant B (image last): 50 / 50 */
+  .columns-feature > div:has(> .columns-feature-img-col:last-child) > div {
+    flex: 1 1 50%;
+  }
+
+  /* Variant A (image first): image ~30% (fixed 360px), text fills rest */
+  .columns-feature > div:has(> .columns-feature-img-col:first-child) > .columns-feature-img-col {
+    flex: 0 0 360px;
+    align-self: flex-start;
+  }
+
+  .columns-feature > div:has(> .columns-feature-img-col:first-child) > div:not(.columns-feature-img-col) {
+    flex: 1;
+  }
+}

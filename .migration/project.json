@@ -1,0 +1,10 @@
+{
+  "type": "da",
+  "sites": {
+    "4pax8": {
+      "previewOrg": "chrbrown-adobe",
+      "previewSite": "4pax8",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

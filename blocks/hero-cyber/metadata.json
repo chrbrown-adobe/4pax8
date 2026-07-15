@@ -1,0 +1,37 @@
+{
+  "variantName": "hero-cyber",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-07-15T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.pax8.com/en-us/marketplace/cybersecurity/",
+    "originPage": "Pax8 cybersecurity marketplace landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "marketing landing pages",
+      "product/solution pages with full-bleed background hero"
+    ],
+    "notSuitableFor": [
+      "text-only heroes without background image",
+      "compact inline banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/marketplace/cybersecurity/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-15T00:00:00.000Z"
+  }
+}

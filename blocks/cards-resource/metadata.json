@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-resource",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-07-15T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.pax8.com/en-us/marketplace/cybersecurity/",
+    "originPage": "Pax8 cybersecurity marketplace landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "resource",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "resource/download card grids with images and CTAs",
+      "content cards with a hero image, text, and a call-to-action link"
+    ],
+    "notSuitableFor": [
+      "icon-only value-prop cards",
+      "logo cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/marketplace/cybersecurity/index"],
+    "reuseCount": 2,
+    "lastUsed": "2026-07-15T00:00:00.000Z"
+  }
+}
